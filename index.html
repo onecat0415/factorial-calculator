@@ -3,21 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>阶乘计算器</title>
+    <title>多功能计算器</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>阶乘计算器</h1>
-        <div class="calculator">
-            <input type="number" id="numberInput" min="0" placeholder="请输入一个正整数" onkeypress="handleKeyPress(event)">
-            <button onclick="calculateFactorial()">计算</button>
+        <h1>多功能计算器</h1>
+        <div class="nav-buttons">
+            <button onclick="showModule('factorial')">阶乘计算器</button>
+            <button onclick="showModule('birthday')">生日计算器</button>
         </div>
-        <div id="result" class="result"></div>
-        <div class="footer">
-            <p>分享这个链接给你的朋友即可</p>
+
+        <div id="factorialModule" class="module">
+            <h2>阶乘计算器</h2>
+            <div class="calculator">
+                <input type="number" id="numberInput" min="0" placeholder="请输入一个正整数" onkeypress="handleKeyPress(event)">
+                <button onclick="calculateFactorial()">计算</button>
+            </div>
+            <div id="result" class="result"></div>
+        </div>
+
+        <div id="birthdayModule" class="module" style="display: none;">
+            <h2>生日计算器</h2>
+            <div class="calculator">
+                <input type="date" id="birthdayInput">
+                <button onclick="calculateDays()">计算天数</button>
+            </div>
+            <div id="daysResult" class="result"></div>
         </div>
     </div>
-    <script src="script.js?v=1.0.2"></script>
+    <script src="script.js?v=1.0.3"></script>
 </body>
 </html>
