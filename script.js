@@ -21,3 +21,9 @@ function calculateFactorial() {
     document.getElementById('result').innerHTML = `${num} 的阶乘为 ${factorial}`;
     document.getElementById('numberInput').value = '';  // 清空输入框
 }
+
+function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+        calculateFactorial();
+    }
+}
